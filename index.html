@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktiver KI Book Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Interaktiver Book Builder</h1>
+            <p>Erstelle dein eigenes interaktives Buch mit Bildern</p>
+        </header>
+
+        <main>
+            <div class="editor-section">
+                <h2>Buch Editor</h2>
+                
+                <div class="book-info">
+                    <label for="bookTitle">Buchtitel:</label>
+                    <input type="text" id="bookTitle" placeholder="Gib deinem Buch einen Titel...">
+                    
+                    <label for="bookAuthor">Autor:</label>
+                    <input type="text" id="bookAuthor" placeholder="Dein Name...">
+                </div>
+
+                <div class="page-editor">
+                    <h3>Seite hinzufügen</h3>
+                    
+                    <label for="pageTitle">Seitentitel:</label>
+                    <input type="text" id="pageTitle" placeholder="Titel der Seite...">
+                    
+                    <label for="pageContent">Inhalt:</label>
+                    <textarea id="pageContent" rows="5" placeholder="Schreibe den Inhalt dieser Seite..."></textarea>
+                    
+                    <label for="pageImage">Bild URL:</label>
+                    <input type="text" id="pageImage" placeholder="https://beispiel.com/bild.jpg (optional)">
+                    
+                    <button id="addPageBtn" class="btn btn-primary">Seite hinzufügen</button>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <h2>Buchvorschau</h2>
+                <div id="bookPreview" class="book-preview">
+                    <p class="empty-state">Füge Seiten hinzu, um eine Vorschau zu sehen...</p>
+                </div>
+                
+                <div class="actions">
+                    <button id="downloadBtn" class="btn btn-success" disabled>
+                        📥 Buch herunterladen
+                    </button>
+                    <button id="clearBtn" class="btn btn-secondary">
+                        🗑️ Alles löschen
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

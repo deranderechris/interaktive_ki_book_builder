@@ -49,7 +49,7 @@ def test_display_page():
     book = InteractiveBook("Anzeigetest")
     book.add_page("Testinhalt", "test.jpg")
     result = book.display_page(0)
-    assert result == True
+    assert result is True
     print("✓ test_display_page bestanden")
 
 

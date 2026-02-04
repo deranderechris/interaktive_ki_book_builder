@@ -36,8 +36,8 @@ class InteractiveBook:
             print(f"\n=== Seite {page_number + 1} von {self.get_total_pages()} ===")
             print(f"Titel: {self.title}")
             print(f"\n{page['text']}")
-            if page['image']:
-                print(f"[Bild: {page['image']}]")
+            if page.get('image'):
+                print(f"[Bild: {page.get('image')}]")
             print("=" * 50)
             return True
         return False

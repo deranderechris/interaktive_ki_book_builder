@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Interactive Story Schema",
+  "description": "Schema für interaktive Geschichten mit Abschnitten und Entscheidungen",
+  "type": "object",
+  "required": ["title", "description", "startSection", "sections"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Titel der Geschichte"
+    },
+    "description": {
+      "type": "string",
+      "description": "Kurze Beschreibung der Geschichte"
+    },
+    "author": {
+      "type": "string",
+      "description": "Autor der Geschichte"
+    },
+    "startSection": {
+      "type": "string",
+      "description": "ID des Startabschnitts"
+    },
+    "sections": {
+      "type": "object",
+      "description": "Alle Abschnitte der Geschichte",
+      "patternProperties": {
+        "^[a-zA-Z0-9_-]+$": {
+          "type": "object",
+          "required": ["text", "imagePrompt"],
+          "properties": {
+            "text": {
+              "type": "string",
+              "description": "Der Textinhalt des Abschnitts"
+            },
+            "imagePrompt": {
+              "type": "string",
+              "description": "Prompt für die Bildgenerierung"
+            },
+            "choices": {
+              "type": "array",
+              "description": "Entscheidungsmöglichkeiten (A/B/C/D)",
+              "items": {
+                "type": "object",
+                "required": ["id", "text", "nextSection"],
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "enum": ["A", "B", "C", "D"],
+                    "description": "Auswahlkennung (A, B, C oder D)"
+                  },
+                  "text": {
+                    "type": "string",
+                    "description": "Text der Entscheidungsoption"
+                  },
+                  "nextSection": {
+                    "type": "string",
+                    "description": "ID des nächsten Abschnitts oder 'END' für Ende"
+                  }
+                }
+              },
+              "maxItems": 4,
+              "minItems": 0
+            },
+            "isEnding": {
+              "type": "boolean",
+              "description": "Markiert ob dies ein Endabschnitt ist",
+              "default": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

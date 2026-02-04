@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Der Zauberwald</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5dc;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: #654321;
+            font-size: 2.5em;
+        }
+        .description {
+            font-style: italic;
+            color: #666;
+        }
+        .section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: #654321;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .section-content {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .image-prompt {
+            background-color: #fff8dc;
+            padding: 10px;
+            border-left: 4px solid #daa520;
+            margin: 15px 0;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+        .choices {
+            margin-top: 30px;
+        }
+        .choice {
+            background-color: #8b7355;
+            color: white;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        .choice:hover {
+            background-color: #654321;
+        }
+        .choice-label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .hints {
+            background-color: #fffacd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .ending {
+            text-align: center;
+            font-size: 1.2em;
+            color: #654321;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fff8dc;
+            border-radius: 10px;
+        }
+        .restart {
+            background-color: #daa520;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+        .restart:hover {
+            background-color: #b8860b;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Der Zauberwald</h1>
+        <p class="description">Ein magisches Abenteuer für junge Entdecker</p>
+        <p><em>von KI Book Builder</em></p>
+    </div>
+    <div id="story-container"></div>
+    
+    <script>
+        const storyData = {"title": "Der Zauberwald", "description": "Ein magisches Abenteuer für junge Entdecker", "author": "KI Book Builder", "start_section_id": "S1", "sections": {"S1": {"section_id": "S1", "title": "Am Waldrand", "content": "Du stehst am Rand eines geheimnisvollen Waldes. Die Bäume ragen hoch in den Himmel, und zwischen den Ästen funkeln magische Lichter. Ein schmaler Pfad führt tief in den Wald hinein, während rechts ein kristallklarer Bach plätschert.", "choices": [{"text": "Dem Pfad in den Wald folgen", "next_section_id": "S2", "label": "A"}, {"text": "Dem Bach folgen", "next_section_id": "S3", "label": "B"}], "image_prompt": "children's book illustration style, colorful, friendly, whimsical, waldrand, stehst, rand, eines, geheimnisvollen", "hints": [], "story_memory": {}}, "S2": {"section_id": "S2", "title": "Im tiefen Wald", "content": "Der Pfad führt dich tiefer in den Wald. Plötzlich siehst du eine kleine Fee, die auf einem Pilz sitzt. Sie winkt dir fröhlich zu.", "choices": [{"text": "Mit der Fee sprechen", "next_section_id": "S4", "label": "A"}, {"text": "Weiter den Pfad entlang gehen", "next_section_id": "S5", "label": "B"}], "image_prompt": "children's book illustration style, colorful, friendly, whimsical, tiefen, wald, pfad, führt, dich", "hints": [], "story_memory": {}}, "S3": {"section_id": "S3", "title": "Der magische Bach", "content": "Du folgst dem Bach und entdeckst eine wunderschöne Lichtung. In der Mitte steht ein alter Baum mit einer Tür im Stamm.", "choices": [{"text": "Die Tür öffnen", "next_section_id": "S6", "label": "A"}, {"text": "Zurück zum Waldrand gehen", "next_section_id": "S1", "label": "B"}], "image_prompt": "children's book illustration style, colorful, friendly, whimsical, magische, bach, folgst, entdeckst, wunderschöne", "hints": [], "story_memory": {}}, "S4": {"section_id": "S4", "title": "Die Fee der Weisheit", "content": "Die Fee lächelt dich an und schenkt dir einen magischen Kristall. 'Dieser wird dir immer den richtigen Weg zeigen', sagt sie. Du hast einen wertvollen Schatz gefunden!", "choices": [], "image_prompt": "children's book illustration style, colorful, friendly, whimsical, weisheit, lächelt, dich, schenkt, magischen", "hints": [], "story_memory": {}}, "S5": {"section_id": "S5", "title": "Der endlose Pfad", "content": "Du gehst weiter und weiter, doch der Pfad scheint kein Ende zu nehmen. Schließlich findest du einen Weg zurück zum Waldrand. Das Abenteuer war interessant, aber du hast nichts Besonderes gefunden.", "choices": [], "image_prompt": "children's book illustration style, colorful, friendly, whimsical, endlose, pfad, gehst, weiter, doch", "hints": [], "story_memory": {}}, "S6": {"section_id": "S6", "title": "Der verborgene Palast", "content": "Die Tür öffnet sich und du betrittst einen prächtigen unterirdischen Palast! Die Waldgeister empfangen dich als ehrenvollen Gast. Du wirst zum Hüter des Zauberwaldes ernannt!", "choices": [], "image_prompt": "children's book illustration style, colorful, friendly, whimsical, verborgene, palast, öffnet, betrittst, prächtigen", "hints": [], "story_memory": {}}}, "metadata": {}};
+        let currentSectionId = storyData.start_section_id;
+        
+        function displaySection(sectionId) {
+            const section = storyData.sections[sectionId];
+            if (!section) {
+                console.error("Section not found:", sectionId);
+                return;
+            }
+            
+            let html = '<div class="section">';
+            html += '<h2 class="section-title">' + section.title + '</h2>';
+            html += '<div class="section-content">' + section.content.replace(/\n/g, '<br>') + '</div>';
+            
+            if (section.image_prompt) {
+                html += '<div class="image-prompt">🎨 Bild-Prompt: ' + section.image_prompt + '</div>';
+            }
+            
+            if (section.hints && section.hints.length > 0) {
+                html += '<div class="hints"><strong>💡 Hinweise:</strong><ul>';
+                section.hints.forEach(hint => {
+                    html += '<li>' + hint + '</li>';
+                });
+                html += '</ul></div>';
+            }
+            
+            if (section.choices && section.choices.length > 0) {
+                html += '<div class="choices">';
+                section.choices.forEach(choice => {
+                    const label = choice.label ? '<span class="choice-label">' + choice.label + ')</span>' : '';
+                    html += '<button class="choice" onclick="makeChoice('' + choice.next_section_id + '')">';
+                    html += label + choice.text;
+                    html += '</button>';
+                });
+                html += '</div>';
+            } else {
+                html += '<div class="ending">📖 Ende dieser Geschichte 📖</div>';
+                html += '<button class="restart" onclick="restart()">Geschichte neu starten</button>';
+            }
+            
+            html += '</div>';
+            
+            document.getElementById('story-container').innerHTML = html;
+            window.scrollTo(0, 0);
+        }
+        
+        function makeChoice(nextSectionId) {
+            currentSectionId = nextSectionId;
+            displaySection(nextSectionId);
+        }
+        
+        function restart() {
+            currentSectionId = storyData.start_section_id;
+            displaySection(currentSectionId);
+        }
+        
+        // Start the story
+        displaySection(currentSectionId);
+    </script>
+</body>
+</html>

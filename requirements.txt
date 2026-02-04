@@ -1,0 +1,13 @@
+# Core dependencies for Interactive KI Book Builder
+
+# For data serialization and storage
+python-json-logger>=2.0.0
+
+# For enhanced console output
+colorama>=0.4.6
+
+# For generating HTML exports
+jinja2>=3.1.0
+
+# For PDF generation (optional)
+reportlab>=4.0.0

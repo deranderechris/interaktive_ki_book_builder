@@ -2,6 +2,12 @@
 
 hiermit kann jeder sein eigenes interaktives Buch mit Bildern erstellen
 
+## 📖 Für Einsteiger
+
+**Neu hier? Starte mit unserer [Schritt-für-Schritt Anleitung für Einsteiger](ERSTE_SCHRITTE.md)!**
+
+Die einsteigerfreundliche Anleitung erklärt alles von Anfang an - perfekt wenn du gerade erst mit dem Programmieren beginnst!
+
 ## Funktionen
 
 - Erstellen von interaktiven Büchern mit Text und Bildern

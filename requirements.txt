@@ -1,0 +1,4 @@
+# Keine externen Abhängigkeiten erforderlich!
+# Dieses Projekt verwendet nur Python-Standardbibliotheken.
+# 
+# Python >= 3.7 wird empfohlen

@@ -461,12 +461,21 @@
 
         function showError(message) {
             const content = document.getElementById('storyContent');
-            content.innerHTML = `
-                <div class="error">
-                    <strong>⚠️ Fehler:</strong><br>
-                    ${message}
-                </div>
-            `;
+            content.innerHTML = '';
+            
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error';
+            
+            const strong = document.createElement('strong');
+            strong.textContent = '⚠️ Fehler:';
+            errorDiv.appendChild(strong);
+            
+            errorDiv.appendChild(document.createElement('br'));
+            
+            const messageText = document.createTextNode(message);
+            errorDiv.appendChild(messageText);
+            
+            content.appendChild(errorDiv);
         }
     </script>
 </body>

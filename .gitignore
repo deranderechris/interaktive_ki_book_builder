@@ -36,6 +36,10 @@ env/
 save*.json
 *.save
 
+# Test files (don't commit)
+test_*.json
+*_test.json
+
 # OS
 .DS_Store
 Thumbs.db

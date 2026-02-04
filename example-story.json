@@ -1,0 +1,175 @@
+{
+  "title": "Das Magische Abenteuer",
+  "description": "Ein interaktives Fantasy-Abenteuer voller Magie und Mysterien",
+  "author": "Beispiel Autor",
+  "startSection": "start",
+  "sections": {
+    "start": {
+      "text": "Du stehst vor einem alten, mysteriösen Schloss. Der Wind pfeift durch die zerbrochenen Fenster, und eine schwere Holztür steht leicht offen. Du hörst merkwürdige Geräusche aus dem Inneren. Was machst du?",
+      "imagePrompt": "Ein altes, mysteriöses Schloss bei Nacht, neblig, gotisch, Fantasy-Stil",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Mutig durch die Haupttür eintreten",
+          "nextSection": "mainHall"
+        },
+        {
+          "id": "B",
+          "text": "Um das Schloss herumgehen und nach einem anderen Eingang suchen",
+          "nextSection": "sideEntrance"
+        },
+        {
+          "id": "C",
+          "text": "Umkehren und nach Hause gehen",
+          "nextSection": "endCoward"
+        },
+        {
+          "id": "D",
+          "text": "Auf Verstärkung warten",
+          "nextSection": "endWait"
+        }
+      ]
+    },
+    "mainHall": {
+      "text": "Du betrittst eine große Halle mit hohen Decken. Kristall-Kronleuchter hängen von der Decke, obwohl sie seit Jahren nicht mehr angezündet wurden. Plötzlich siehst du zwei Türen: eine goldene Tür zur Linken und eine silberne Tür zur Rechten. Welche wählst du?",
+      "imagePrompt": "Große gotische Halle mit Kronleuchtern, zwei verzierte Türen (gold und silber), mysteriös beleuchtet",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Die goldene Tür öffnen",
+          "nextSection": "treasureRoom"
+        },
+        {
+          "id": "B",
+          "text": "Die silberne Tür öffnen",
+          "nextSection": "libraryRoom"
+        },
+        {
+          "id": "C",
+          "text": "Die Halle genauer untersuchen",
+          "nextSection": "secretPassage"
+        }
+      ]
+    },
+    "sideEntrance": {
+      "text": "Du findest einen Seiteneingang durch einen überwucherten Garten. Der Garten ist voller magischer Pflanzen, die im Mondlicht leuchten. Du gelangst in eine Bibliothek voller alter Bücher.",
+      "imagePrompt": "Verwunschener Garten bei Nacht mit leuchtenden magischen Pflanzen, Mondlicht, Fantasy",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Ein altes Zauberbuch studieren",
+          "nextSection": "learnMagic"
+        },
+        {
+          "id": "B",
+          "text": "Weiter in das Schloss vordringen",
+          "nextSection": "mainHall"
+        }
+      ]
+    },
+    "treasureRoom": {
+      "text": "Die goldene Tür führt zu einem Raum voller Schätze! Gold, Juwelen und magische Artefakte liegen überall verstreut. In der Mitte des Raumes steht eine Truhe mit einem leuchtenden Schlüssel darauf.",
+      "imagePrompt": "Schatzkammer mit Gold, Juwelen, magischen Artefakten, leuchtender Schlüssel auf einer Truhe, Fantasy-Stil",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Den leuchtenden Schlüssel nehmen",
+          "nextSection": "endTreasure"
+        },
+        {
+          "id": "B",
+          "text": "Die Truhe ohne Schlüssel öffnen",
+          "nextSection": "endTrap"
+        }
+      ]
+    },
+    "libraryRoom": {
+      "text": "Die silberne Tür öffnet sich zu einer riesigen Bibliothek. Tausende von Büchern reichen bis zur Decke. Ein alter Zauberer sitzt an einem Tisch und liest. Er blickt auf und lächelt.",
+      "imagePrompt": "Magische Bibliothek mit unendlichen Bücherregalen, alter freundlicher Zauberer am Tisch, warmes Kerzenlicht",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Mit dem Zauberer sprechen",
+          "nextSection": "endWizard"
+        },
+        {
+          "id": "B",
+          "text": "Ein bestimmtes Buch suchen",
+          "nextSection": "endKnowledge"
+        }
+      ]
+    },
+    "secretPassage": {
+      "text": "Bei genauerer Untersuchung entdeckst du einen Geheimgang hinter einem Wandteppich! Der Gang führt direkt zum Thronsaal, wo ein magisches Portal schwebt.",
+      "imagePrompt": "Geheimer Durchgang hinter Wandteppich, führt zu Thronsaal mit schwebendem magischem Portal, mystisch",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Durch das Portal springen",
+          "nextSection": "endPortal"
+        },
+        {
+          "id": "B",
+          "text": "Das Portal untersuchen",
+          "nextSection": "endExplore"
+        }
+      ]
+    },
+    "learnMagic": {
+      "text": "Das Zauberbuch lehrt dich mächtige Magie! Du fühlst, wie neue Kräfte durch deine Adern fließen. Mit diesen Fähigkeiten kannst du das Schloss nun sicher erkunden.",
+      "imagePrompt": "Offenes magisches Buch mit leuchtenden Symbolen, magische Energie fließt vom Buch, Fantasy",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Deine neuen Kräfte nutzen um das Schloss zu schützen",
+          "nextSection": "endHero"
+        }
+      ]
+    },
+    "endCoward": {
+      "text": "Du gehst nach Hause und fragst dich für immer, was im Schloss gewesen wäre. Manchmal ist Vorsicht wichtig, aber manche Abenteuer sind es wert, gewagt zu werden.",
+      "imagePrompt": "Person geht allein einen nebeligen Weg nach Hause, Schloss im Hintergrund, melancholisch",
+      "isEnding": true
+    },
+    "endWait": {
+      "text": "Du wartest und wartest, aber niemand kommt. Die Sonne geht auf und das Schloss verschwindet im Morgennebel. War es je real?",
+      "imagePrompt": "Leerer Platz bei Sonnenaufgang, Nebel, wo einst ein Schloss stand, mysteriös",
+      "isEnding": true
+    },
+    "endTreasure": {
+      "text": "Der Schlüssel öffnet die Truhe und offenbart einen magischen Edelstein von unschätzbarem Wert! Du bist nun reich und mächtig. Dein Abenteuer endet in Ruhm und Reichtum!",
+      "imagePrompt": "Offene Truhe mit leuchtendem magischem Edelstein, Erfolg, triumphaler Moment, Fantasy",
+      "isEnding": true
+    },
+    "endTrap": {
+      "text": "Die Truhe war eine Falle! Magische Ketten fesseln dich. Du bist gefangen, aber nicht alles ist verloren - vielleicht kommt eines Tages ein mutiger Held, um dich zu befreien...",
+      "imagePrompt": "Person in magischen Ketten gefangen, düstere Schatzkammer, dramatisch",
+      "isEnding": true
+    },
+    "endWizard": {
+      "text": "Der Zauberer ist freundlich und weise. Er bietet dir an, sein Schüler zu werden. Du nimmst an und verbringst Jahre damit, die Geheimnisse der Magie zu lernen. Ein erfülltes Leben erwartet dich!",
+      "imagePrompt": "Weiser Zauberer und Schüler in Bibliothek, magischer Unterricht, warmherzige Atmosphäre",
+      "isEnding": true
+    },
+    "endKnowledge": {
+      "text": "Du findest ein Buch, das alle Geheimnisse des Universums enthält. Mit diesem Wissen kehrst du nach Hause zurück und nutzt es, um der Welt zu helfen. Du wirst als großer Weiser bekannt!",
+      "imagePrompt": "Antikes Buch mit kosmischen Symbolen, Wissen und Weisheit, leuchtend, episch",
+      "isEnding": true
+    },
+    "endPortal": {
+      "text": "Du springst durch das Portal und findest dich in einer wunderschönen magischen Welt wieder! Neue Abenteuer erwarten dich in diesem fantastischen Reich!",
+      "imagePrompt": "Magische Fantasywelt mit schwebenden Inseln, Wasserfällen, bunten Kreaturen, atemberaubend schön",
+      "isEnding": true
+    },
+    "endExplore": {
+      "text": "Bei der Untersuchung des Portals entdeckst du, wie man es kontrolliert. Du wirst zum Hüter zwischen den Welten und hilfst Reisenden, sicher zwischen den Dimensionen zu wechseln!",
+      "imagePrompt": "Person vor kontrolliertem magischem Portal, Hüter der Welten, episch und kraftvoll",
+      "isEnding": true
+    },
+    "endHero": {
+      "text": "Mit deiner neu gewonnenen Magie befreist du das Schloss von einem uralten Fluch! Das Schloss erstrahlt in neuem Glanz und die Bewohner danken dir. Du bist ein wahrer Held!",
+      "imagePrompt": "Restauriertes magisches Schloss in voller Pracht, Held im Vordergrund, triumphaler Moment, Fantasy",
+      "isEnding": true
+    }
+  }
+}

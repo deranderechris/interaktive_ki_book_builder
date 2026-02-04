@@ -1,0 +1,76 @@
+{
+  "title": "Titel deiner Geschichte",
+  "description": "Kurze Beschreibung deiner Geschichte",
+  "author": "Dein Name",
+  "startSection": "start",
+  "sections": {
+    "start": {
+      "text": "Hier beginnt deine Geschichte. Beschreibe die Szene und stelle eine Frage oder ein Dilemma vor.",
+      "imagePrompt": "Beschreibung für KI-Bildgenerierung: z.B. 'Eine mysteriöse Waldlichtung bei Sonnenuntergang'",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Erste Entscheidungsoption",
+          "nextSection": "section_a"
+        },
+        {
+          "id": "B",
+          "text": "Zweite Entscheidungsoption",
+          "nextSection": "section_b"
+        },
+        {
+          "id": "C",
+          "text": "Dritte Entscheidungsoption (optional)",
+          "nextSection": "section_c"
+        },
+        {
+          "id": "D",
+          "text": "Vierte Entscheidungsoption (optional)",
+          "nextSection": "section_d"
+        }
+      ]
+    },
+    "section_a": {
+      "text": "Was passiert nach Entscheidung A...",
+      "imagePrompt": "Bild-Prompt für diese Szene",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Nächste Entscheidung",
+          "nextSection": "ending_1"
+        }
+      ]
+    },
+    "section_b": {
+      "text": "Was passiert nach Entscheidung B...",
+      "imagePrompt": "Bild-Prompt für diese Szene",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Nächste Entscheidung",
+          "nextSection": "ending_2"
+        }
+      ]
+    },
+    "section_c": {
+      "text": "Was passiert nach Entscheidung C...",
+      "imagePrompt": "Bild-Prompt für diese Szene",
+      "isEnding": true
+    },
+    "section_d": {
+      "text": "Was passiert nach Entscheidung D...",
+      "imagePrompt": "Bild-Prompt für diese Szene",
+      "isEnding": true
+    },
+    "ending_1": {
+      "text": "Ein mögliches Ende deiner Geschichte...",
+      "imagePrompt": "Bild-Prompt für das Ende",
+      "isEnding": true
+    },
+    "ending_2": {
+      "text": "Ein anderes mögliches Ende...",
+      "imagePrompt": "Bild-Prompt für das Ende",
+      "isEnding": true
+    }
+  }
+}

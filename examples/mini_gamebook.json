@@ -1,0 +1,90 @@
+{
+  "title": "Die Schatzsuche",
+  "author": "Interactive KI Book Builder",
+  "description": "Ein kleines interaktives Abenteuer auf der Suche nach einem verlorenen Schatz",
+  "pages": [
+    {
+      "id": "start",
+      "text": "Du befindest dich vor einer alten Schatzkarte. Sie zeigt zwei mögliche Wege: einen durch die Berge und einen durch den Dschungel. Welchen Weg wählst du?",
+      "image_prompt": "Eine alte vergilbte Schatzkarte mit zwei markierten Wegen",
+      "choices": [
+        {
+          "text": "Den Bergpfad nehmen",
+          "next": "mountain"
+        },
+        {
+          "text": "Durch den Dschungel gehen",
+          "next": "jungle"
+        }
+      ]
+    },
+    {
+      "id": "mountain",
+      "text": "Du kletterst die steilen Berge hinauf. Am Gipfel findest du eine Höhle. Im Inneren siehst du zwei Tunnels.",
+      "image_prompt": "Berglandschaft mit einer dunklen Höhle am Gipfel",
+      "choices": [
+        {
+          "text": "Den linken Tunnel nehmen",
+          "next": "left_tunnel"
+        },
+        {
+          "text": "Den rechten Tunnel nehmen",
+          "next": "right_tunnel"
+        }
+      ]
+    },
+    {
+      "id": "jungle",
+      "text": "Der Dschungel ist dicht und gefährlich. Plötzlich hörst du ein Knurren. Ein Tiger versperrt dir den Weg!",
+      "image_prompt": "Dichter Dschungel mit einem Tiger auf dem Pfad",
+      "choices": [
+        {
+          "text": "Langsam zurückweichen",
+          "next": "start"
+        },
+        {
+          "text": "Einen Stock werfen, um den Tiger abzulenken",
+          "next": "tiger_distracted"
+        }
+      ]
+    },
+    {
+      "id": "left_tunnel",
+      "text": "Der Tunnel führt zu einem unterirdischen See. Am Ufer liegt eine alte Truhe!",
+      "image_prompt": "Unterirdischer See mit einer Schatztruhe am Ufer",
+      "choices": [
+        {
+          "text": "Die Truhe öffnen",
+          "next": "treasure_found"
+        }
+      ]
+    },
+    {
+      "id": "right_tunnel",
+      "text": "Der Tunnel stürzt ein! Du musst schnell zurück zur Höhle.",
+      "image_prompt": "Einstürzender Tunnel mit fallenden Steinen",
+      "choices": [
+        {
+          "text": "Zurück zur Höhle",
+          "next": "mountain"
+        }
+      ]
+    },
+    {
+      "id": "tiger_distracted",
+      "text": "Der Tiger läuft dem Stock hinterher. Du findest einen sicheren Weg weiter und entdeckst Ruinen mit einer goldenen Statue!",
+      "image_prompt": "Alte Dschungelruinen mit einer goldenen Statue",
+      "choices": [
+        {
+          "text": "Die Statue nehmen",
+          "next": "treasure_found"
+        }
+      ]
+    },
+    {
+      "id": "treasure_found",
+      "text": "Glückwunsch! Du hast den Schatz gefunden! Dein Abenteuer war erfolgreich!",
+      "image_prompt": "Offene Schatztruhe voller Gold und Edelsteine, strahlend im Licht"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Dein Gespielt Buch",
+  "author": "Interaktive KI",
+  "description": "Ein interaktives Buch zum Mitspielen und Erleben",
+  "chapters": [
+    {
+      "title": "Der Anfang",
+      "content": "Es war einmal ein magisches Buch, das auf deine Geschichten wartete. Jede Seite war leer, bereit für neue Abenteuer.",
+      "image": "images/chapter1.jpg"
+    },
+    {
+      "title": "Die Wahl",
+      "content": "Du stehst an einer Kreuzung. Links führt der Weg in einen dunklen Wald, rechts zu einem leuchtenden Schloss. Wohin gehst du?",
+      "image": "images/chapter2.jpg",
+      "choices": [
+        {
+          "text": "In den dunklen Wald",
+          "next_chapter": 3
+        },
+        {
+          "text": "Zum leuchtenden Schloss",
+          "next_chapter": 4
+        }
+      ]
+    },
+    {
+      "title": "Der dunkle Wald",
+      "content": "Der Wald ist geheimnisvoll und voller unerwarteter Überraschungen. Zwischen den Bäumen siehst du ein schwaches Licht...",
+      "image": "images/chapter3.jpg"
+    },
+    {
+      "title": "Das leuchtende Schloss",
+      "content": "Das Schloss strahlt in goldenen Farben. Als du näher kommst, öffnet sich das große Tor wie von selbst.",
+      "image": "images/chapter4.jpg"
+    },
+    {
+      "title": "Das Ende",
+      "content": "Deine Reise endet hier, aber es ist nur der Anfang vieler weiterer Abenteuer in deinem gespielten Buch.",
+      "image": "images/chapter5.jpg"
+    }
+  ]
+}

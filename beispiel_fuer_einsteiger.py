@@ -34,7 +34,7 @@ mein_buch.add_page(
 
 mein_buch.add_page(
     "Und wenn sie nicht gestorben sind, dann leben sie noch heute. Ende.",
-    "bild5.jpg"
+    "bild4.jpg"
 )
 
 # Zeige das gesamte Buch an

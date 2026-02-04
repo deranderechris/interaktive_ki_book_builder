@@ -1,0 +1,4 @@
+# Keine externen Abhängigkeiten erforderlich für die Basisversion
+# Für zukünftige Erweiterungen können hier Pakete hinzugefügt werden:
+# pillow>=10.0.0  # Für Bildverarbeitung
+# markdown>=3.4.0  # Für Markdown-Unterstützung

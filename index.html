@@ -313,12 +313,6 @@
             loadSection(story.startSection);
         }
 
-        function escapeHtml(unsafe) {
-            const div = document.createElement('div');
-            div.textContent = unsafe;
-            return div.innerHTML;
-        }
-
         function loadSection(sectionId) {
             if (!currentStory || !currentStory.sections[sectionId]) {
                 showError(`Abschnitt "${sectionId}" nicht gefunden`);

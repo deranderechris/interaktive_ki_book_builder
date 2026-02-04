@@ -1,0 +1,163 @@
+{
+  "title": "Das Abenteuer im Verzauberten Wald",
+  "author": "KI Book Builder",
+  "description": "Ein interaktives Fantasy-Abenteuer voller Magie und Gefahren",
+  "start_section_id": "start",
+  "sections": {
+    "start": {
+      "id": "start",
+      "title": "Der Beginn des Abenteuers",
+      "text": "Du stehst am Rande eines dichten, mysteriösen Waldes. Die Bäume sind so hoch, dass du ihre Spitzen kaum sehen kannst. Ein schmaler Pfad führt in die Dunkelheit hinein, während rechts von dir ein kleines, verlassenes Dorf zu sehen ist. Die Sonne geht langsam unter, und du musst dich entscheiden, was du tun willst.",
+      "decisions": [
+        {
+          "option": "A",
+          "text": "Den Waldpfad betreten und das Abenteuer beginnen",
+          "next_section_id": "forest_path"
+        },
+        {
+          "option": "B",
+          "text": "Zum verlassenen Dorf gehen und nach Hinweisen suchen",
+          "next_section_id": "abandoned_village"
+        },
+        {
+          "option": "C",
+          "text": "Warten bis es dunkel wird und beobachten",
+          "next_section_id": "wait_observe"
+        }
+      ],
+      "is_ending": false,
+      "image_prompt": "Scene: Der Beginn des Abenteuers | Style: fantasy art, detailed illustration, high quality | Description: Du stehst am Rande eines dichten, mysteriösen Waldes. Die Bäume sind so hoch, dass du ihre Spitzen kaum sehen kannst. Ein schmaler Pfad führt in die Dunkelheit hinein, während rech... | Atmosphere: dark atmosphere, mysterious, forest setting, natural light"
+    },
+    "forest_path": {
+      "id": "forest_path",
+      "title": "Im Herzen des Waldes",
+      "text": "Du folgst dem Pfad tiefer in den Wald hinein. Das Licht wird schwächer, und die Geräusche des Waldes werden lauter. Plötzlich hörst du ein leises Flüstern zwischen den Bäumen. Vor dir teilt sich der Weg in zwei Richtungen: links führt er zu einem leuchtenden Pilzkreis, rechts zu einer alten Steinhütte.",
+      "decisions": [
+        {
+          "option": "A",
+          "text": "Dem leuchtenden Pilzkreis folgen",
+          "next_section_id": "fairy_circle"
+        },
+        {
+          "option": "B",
+          "text": "Zur alten Steinhütte gehen",
+          "next_section_id": "stone_hut"
+        },
+        {
+          "option": "C",
+          "text": "Dem Flüstern lauschen und still bleiben",
+          "next_section_id": "listen_whisper"
+        }
+      ],
+      "is_ending": false,
+      "image_prompt": "Scene: Im Herzen des Waldes | Style: fantasy art, detailed illustration, high quality | Description: Du folgst dem Pfad tiefer in den Wald hinein. Das Licht wird schwächer, und die Geräusche des Waldes werden lauter. Plötzlich hörst du ein leises Flüstern zwischen den Bäumen. Vor dir teilt sich de... | Atmosphere: dark atmosphere, mysterious, forest setting, natural light"
+    },
+    "abandoned_village": {
+      "id": "abandoned_village",
+      "title": "Das Verlassene Dorf",
+      "text": "Das Dorf ist still und verlassen. Alte Häuser stehen leer, ihre Fenster dunkel wie blinde Augen. In der Mitte des Dorfes findest du einen alten Brunnen und eine kleine Kapelle. Ein kalter Wind weht durch die leeren Straßen.",
+      "decisions": [
+        {
+          "option": "A",
+          "text": "Den Brunnen untersuchen",
+          "next_section_id": "well_investigation"
+        },
+        {
+          "option": "B",
+          "text": "Die Kapelle betreten",
+          "next_section_id": "chapel_enter"
+        },
+        {
+          "option": "C",
+          "text": "In eines der Häuser gehen",
+          "next_section_id": "house_explore"
+        }
+      ],
+      "is_ending": false,
+      "image_prompt": "Scene: Das Verlassene Dorf | Style: fantasy art, detailed illustration, high quality | Description: Das Dorf ist still und verlassen. Alte Häuser stehen leer, ihre Fenster dunkel wie blinde Augen. In der Mitte des Dorfes findest du einen alten Brunnen und eine kleine Kapelle. Ein kalter Wind weht ... | Atmosphere: dark atmosphere, mysterious, urban setting, cityscape"
+    },
+    "wait_observe": {
+      "id": "wait_observe",
+      "title": "Die Stille der Nacht",
+      "text": "Du wartest, bis die Dunkelheit hereinbricht. Plötzlich siehst du, wie kleine Lichter im Wald aufleuchten - wie Glühwürmchen, aber viel heller. Sie scheinen einen Pfad zu markieren. Aus dem Dorf hörst du ein leises Singen.",
+      "decisions": [
+        {
+          "option": "A",
+          "text": "Den Lichtern im Wald folgen",
+          "next_section_id": "follow_lights"
+        },
+        {
+          "option": "B",
+          "text": "Dem Gesang im Dorf nachgehen",
+          "next_section_id": "follow_song"
+        }
+      ],
+      "is_ending": false,
+      "image_prompt": "Scene: Die Stille der Nacht | Style: fantasy art, detailed illustration, high quality | Description: Du wartest, bis die Dunkelheit hereinbricht. Plötzlich siehst du, wie kleine Lichter im Wald aufleuchten - wie Glühwürmchen, aber viel heller. Sie scheinen einen Pfad zu markieren. Aus dem Dorf hörs... | Atmosphere: dark atmosphere, mysterious, magical atmosphere, mystical"
+    },
+    "fairy_circle": {
+      "id": "fairy_circle",
+      "title": "Der Feenkreis",
+      "text": "Du trittst in den leuchtenden Pilzkreis. Sofort umgibt dich ein warmes, magisches Licht. Kleine geflügelte Wesen erscheinen und tanzen um dich herum. Eine Feenkönigin tritt vor und spricht: 'Du hast unser Reich betreten. Wir werden dir einen Wunsch gewähren.' Mit ihrer Hilfe findest du einen sicheren Weg aus dem Wald und erhältst ein magisches Amulett.",
+      "decisions": [],
+      "is_ending": true,
+      "image_prompt": "Scene: Der Feenkreis | Style: fantasy art, detailed illustration, high quality | Description: Du trittst in den leuchtenden Pilzkreis. Sofort umgibt dich ein warmes, magisches Licht. Kleine geflügelte Wesen erscheinen und tanzen um dich herum. Eine Feenkönigin tritt vor und spricht: 'Du hast u... | Atmosphere: magical atmosphere, mystical"
+    },
+    "stone_hut": {
+      "id": "stone_hut",
+      "title": "Die Hütte des Eremiten",
+      "text": "In der Hütte triffst du einen alten Eremiten, der dir die Geheimnisse des Waldes erklärt. Er gibt dir eine Karte, die dich sicher nach Hause führt, und warnt dich vor den Gefahren der Nacht. Dank seiner Weisheit findest du einen sicheren Ausweg.",
+      "decisions": [],
+      "is_ending": true,
+      "image_prompt": "Scene: Die Hütte des Eremiten | Style: fantasy art, detailed illustration, high quality | Description: In der Hütte triffst du einen alten Eremiten, der dir die Geheimnisse des Waldes erklärt. Er gibt dir eine Karte, die dich sicher nach Hause führt, und warnt dich vor den Gefahren der Nacht. Dank sei... | Atmosphere: peaceful atmosphere, calm"
+    },
+    "listen_whisper": {
+      "id": "listen_whisper",
+      "title": "Das Flüstern der Bäume",
+      "text": "Du lauschst den Flüstergeräuschen. Langsam erkennst du Worte - die Bäume selbst sprechen zu dir! Sie warnen dich vor einem bösen Geist im Wald, zeigen dir aber auch einen versteckten Pfad, der dich sicher zu einem verborgenen Schatz führt. Du folgst ihrem Rat und findest nicht nur einen Ausweg, sondern auch einen magischen Edelstein.",
+      "decisions": [],
+      "is_ending": true,
+      "image_prompt": "Scene: Das Flüstern der Bäume | Style: fantasy art, detailed illustration, high quality | Description: Du lauschst den Flüstergeräuschen. Langsam erkennst du Worte - die Bäume selbst sprechen zu dir! Sie warnen dich vor einem bösen Geist im Wald, zeigen dir aber auch einen versteckten Pfad, der dich si... | Atmosphere: mysterious, forest setting, natural light, magical atmosphere, mystical"
+    },
+    "well_investigation": {
+      "id": "well_investigation",
+      "title": "Der Geheimnisvolle Brunnen",
+      "text": "Als du in den Brunnen schaust, siehst du dein Spiegelbild - aber es bewegt sich anders als du! Plötzlich wirst du hineingezogen in eine andere Welt, eine Parallelversion des Dorfes, wo alles lebt und blüht. Die Bewohner heißen dich willkommen und erklären, dass du der Auserwählte bist, der beide Welten vereinen kann.",
+      "decisions": [],
+      "is_ending": true,
+      "image_prompt": "Scene: Der Geheimnisvolle Brunnen | Style: fantasy art, detailed illustration, high quality | Description: Als du in den Brunnen schaust, siehst du dein Spiegelbild - aber es bewegt sich anders als du! Plötzlich wirst du hineingezogen in eine andere Welt, eine Parallelversion des Dorfes, wo alles lebt und ... | Atmosphere: mysterious, magical atmosphere, mystical"
+    },
+    "chapel_enter": {
+      "id": "chapel_enter",
+      "title": "Die Heilige Kapelle",
+      "text": "In der Kapelle findest du ein altes Buch mit Gebeten und Schutzzaubern. Als du eines laut vorliest, erfüllt ein helles Licht den Raum und vertreibt die Dunkelheit aus dem Dorf. Die verlorenen Seelen der Dorfbewohner werden befreit, und sie danken dir mit ewiger Dankbarkeit.",
+      "decisions": [],
+      "is_ending": true,
+      "image_prompt": "Scene: Die Heilige Kapelle | Style: fantasy art, detailed illustration, high quality | Description: In der Kapelle findest du ein altes Buch mit Gebeten und Schutzzaubern. Als du eines laut vorliest, erfüllt ein helles Licht den Raum und vertreibt die Dunkelheit aus dem Dorf. Die verlorenen Seelen d... | Atmosphere: dark atmosphere, mysterious, bright atmosphere, cheerful, magical atmosphere, mystical"
+    },
+    "house_explore": {
+      "id": "house_explore",
+      "title": "Das Verlassene Haus",
+      "text": "Im Haus findest du Tagebucheinträge, die von einem Fluch erzählen, der über dem Dorf liegt. Du entdeckst, dass der Schlüssel zur Rettung im Wald verborgen ist. Leider wirst du von der Dunkelheit überrascht und musst die Nacht im Haus verbringen - am Morgen bist du weise genug, um einen neuen Weg zu finden.",
+      "decisions": [],
+      "is_ending": true,
+      "image_prompt": "Scene: Das Verlassene Haus | Style: fantasy art, detailed illustration, high quality | Description: Im Haus findest du Tagebucheinträge, die von einem Fluch erzählen, der über dem Dorf liegt. Du entdeckst, dass der Schlüssel zur Rettung im Wald verborgen ist. Leider wirst du von der Dunkelheit über... | Atmosphere: dark atmosphere, mysterious"
+    },
+    "follow_lights": {
+      "id": "follow_lights",
+      "title": "Der Leuchtende Pfad",
+      "text": "Die Lichter führen dich tiefer in den Wald zu einem uralten, magischen Baum. Der Baum ist die Quelle aller Magie im Wald. Er spricht zu dir und bietet dir die Wahl: Werde sein Wächter und lebe für immer im Wald, oder nimm einen Teil seiner Magie mit in deine Welt. Du wählst weise und kehrst mit einem Segen zurück.",
+      "decisions": [],
+      "is_ending": true,
+      "image_prompt": "Scene: Der Leuchtende Pfad | Style: fantasy art, detailed illustration, high quality | Description: Die Lichter führen dich tiefer in den Wald zu einem uralten, magischen Baum. Der Baum ist die Quelle aller Magie im Wald. Er spricht zu dir und bietet dir die Wahl: Werde sein Wächter und lebe für imm... | Atmosphere: forest setting, natural light, magical atmosphere, mystical"
+    },
+    "follow_song": {
+      "id": "follow_song",
+      "title": "Das Lied der Verlorenen",
+      "text": "Der Gesang führt dich zu einem Geist, der einst eine Dorfbewohnerin war. Sie erzählt dir die tragische Geschichte des Dorfes und bittet dich, eine Nachricht zu ihren lebenden Verwandten in der Stadt zu bringen. Du versprichst es, und ihr Geist findet endlich Frieden. Als Dank zeigt sie dir den sichersten Weg zurück.",
+      "decisions": [],
+      "is_ending": true,
+      "image_prompt": "Scene: Das Lied der Verlorenen | Style: fantasy art, detailed illustration, high quality | Description: Der Gesang führt dich zu einem Geist, der einst eine Dorfbewohnerin war. Sie erzählt dir die tragische Geschichte des Dorfes und bittet dich, eine Nachricht zu ihren lebenden Verwandten in der Stadt z... | Atmosphere: peaceful atmosphere, calm"
+    }
+  }
+}

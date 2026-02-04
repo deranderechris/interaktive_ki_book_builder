@@ -41,10 +41,10 @@ Dies erstellt ein Beispielbuch mit mehreren Kapiteln und speichert es als `zeitr
 Erstellen Sie eine neue Python-Datei (z.B. `mein_buch.py`):
 
 ```python
-from book_builder import InteractivBook
+from book_builder import InteractiveBook
 
 # Neues Buch erstellen
-book = InteractivBook(
+book = InteractiveBook(
     title="Mein Buch-Titel",
     author="Ihr Name"
 )
@@ -78,7 +78,7 @@ Dies führt ein Beispiel aus und zeigt die grundlegende Funktionalität.
 
 ## API-Referenz
 
-### InteractivBook-Klasse
+### InteractiveBook-Klasse
 
 #### `__init__(title: str, author: str)`
 Erstellt ein neues Buch.

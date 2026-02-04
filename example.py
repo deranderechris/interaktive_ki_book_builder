@@ -3,14 +3,14 @@
 Beispiel für die Nutzung des Interaktiven Book Builders
 """
 
-from book_builder import InteractivBook
+from book_builder import InteractiveBook
 
 
 def create_example_book():
     """Erstellt ein Beispielbuch"""
     
     # Neues Buch erstellen
-    book = InteractivBook(
+    book = InteractiveBook(
         title="Eine Reise durch die Zeit",
         author="Max Mustermann"
     )

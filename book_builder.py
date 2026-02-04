@@ -9,7 +9,7 @@ import os
 from typing import List, Dict
 
 
-class InteractivBook:
+class InteractiveBook:
     """Klasse zum Erstellen eines interaktiven Buches"""
     
     def __init__(self, title: str, author: str):
@@ -134,7 +134,7 @@ def main():
     print("=== Interaktiver KI Book Builder ===\n")
     
     # Beispiel: Ein neues Buch erstellen
-    book = InteractivBook(
+    book = InteractiveBook(
         title="Mein erstes interaktives Buch",
         author="Book Builder Nutzer"
     )

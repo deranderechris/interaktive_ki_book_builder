@@ -52,7 +52,11 @@ def create_book(config):
         for i, chapter in enumerate(config['chapters'], 1):
             print(f"\nChapter {i}: {chapter.get('title', 'Untitled')}")
             if 'content' in chapter:
-                print(f"  Content: {chapter['content'][:100]}..." if len(chapter.get('content', '')) > 100 else f"  Content: {chapter.get('content', '')}")
+                content = chapter['content']
+                if len(content) > 100:
+                    print(f"  Content: {content[:100]}...")
+                else:
+                    print(f"  Content: {content}")
             if 'image' in chapter:
                 print(f"  Image: {chapter['image']}")
     

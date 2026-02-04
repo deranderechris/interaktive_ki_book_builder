@@ -102,7 +102,7 @@ def run_gamebook(gamebook_data):
                     print(f"Please enter a number between 1 and {len(choices)}.")
             except ValueError:
                 print("Please enter a valid number or 'q' to quit.")
-            except KeyboardInterrupt:
+            except (KeyboardInterrupt, EOFError):
                 print("\n\nThanks for playing!")
                 return
 

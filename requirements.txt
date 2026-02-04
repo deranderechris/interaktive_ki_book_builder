@@ -1,0 +1,8 @@
+# Python-Abhängigkeiten für Interactive KI Book Builder
+# Python dependencies for Interactive KI Book Builder
+
+# Hier Python-Pakete hinzufügen, z.B.:
+# Add Python packages here, e.g.:
+# openai>=1.0.0
+# pillow>=10.0.0
+# flask>=3.0.0

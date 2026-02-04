@@ -313,6 +313,12 @@
             loadSection(story.startSection);
         }
 
+        function escapeHtml(unsafe) {
+            const div = document.createElement('div');
+            div.textContent = unsafe;
+            return div.innerHTML;
+        }
+
         function loadSection(sectionId) {
             if (!currentStory || !currentStory.sections[sectionId]) {
                 showError(`Abschnitt "${sectionId}" nicht gefunden`);
@@ -326,43 +332,74 @@
             const section = currentStory.sections[sectionId];
             const content = document.getElementById('storyContent');
 
-            // Abschnitts-HTML erstellen
-            let html = '<div class="section active">';
+            // Clear and create section container
+            content.innerHTML = '';
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'section active';
 
             // Bild-Placeholder mit Prompt
-            html += '<div class="image-container">';
-            html += '<div class="image-placeholder">';
-            html += '🎨 Bild-Prompt: ' + section.imagePrompt;
-            html += '</div></div>';
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'image-container';
+            const imagePlaceholder = document.createElement('div');
+            imagePlaceholder.className = 'image-placeholder';
+            imagePlaceholder.textContent = '🎨 Bild-Prompt: ' + section.imagePrompt;
+            imageContainer.appendChild(imagePlaceholder);
+            sectionDiv.appendChild(imageContainer);
 
             // Text
-            html += '<div class="story-text">' + section.text + '</div>';
+            const textDiv = document.createElement('div');
+            textDiv.className = 'story-text';
+            textDiv.textContent = section.text;
+            sectionDiv.appendChild(textDiv);
 
             // Entscheidungen oder Ende
             if (section.isEnding) {
-                html += '<div class="ending">';
-                html += '<h3>🎭 Ende der Geschichte</h3>';
-                html += '<button class="restart-btn" onclick="restartStory()">Neue Geschichte starten</button>';
-                html += '</div>';
+                const endingDiv = createEndingDiv();
+                sectionDiv.appendChild(endingDiv);
             } else if (section.choices && section.choices.length > 0) {
-                html += '<div class="choices">';
+                const choicesDiv = document.createElement('div');
+                choicesDiv.className = 'choices';
                 section.choices.forEach(choice => {
-                    html += `<div class="choice" onclick="makeChoice('${choice.nextSection}')">`;
-                    html += `<span class="choice-id">${choice.id}</span>`;
-                    html += `<span class="choice-text">${choice.text}</span>`;
-                    html += '</div>';
+                    const choiceDiv = document.createElement('div');
+                    choiceDiv.className = 'choice';
+                    choiceDiv.addEventListener('click', () => makeChoice(choice.nextSection));
+                    
+                    const choiceId = document.createElement('span');
+                    choiceId.className = 'choice-id';
+                    choiceId.textContent = choice.id;
+                    
+                    const choiceText = document.createElement('span');
+                    choiceText.className = 'choice-text';
+                    choiceText.textContent = choice.text;
+                    
+                    choiceDiv.appendChild(choiceId);
+                    choiceDiv.appendChild(choiceText);
+                    choicesDiv.appendChild(choiceDiv);
                 });
-                html += '</div>';
+                sectionDiv.appendChild(choicesDiv);
             } else {
-                html += '<div class="ending">';
-                html += '<h3>🎭 Ende der Geschichte</h3>';
-                html += '<button class="restart-btn" onclick="restartStory()">Neue Geschichte starten</button>';
-                html += '</div>';
+                const endingDiv = createEndingDiv();
+                sectionDiv.appendChild(endingDiv);
             }
 
-            html += '</div>';
+            content.appendChild(sectionDiv);
+        }
 
-            content.innerHTML = html;
+        function createEndingDiv() {
+            const endingDiv = document.createElement('div');
+            endingDiv.className = 'ending';
+            
+            const heading = document.createElement('h3');
+            heading.textContent = '🎭 Ende der Geschichte';
+            endingDiv.appendChild(heading);
+            
+            const restartBtn = document.createElement('button');
+            restartBtn.className = 'restart-btn';
+            restartBtn.textContent = 'Neue Geschichte starten';
+            restartBtn.addEventListener('click', restartStory);
+            endingDiv.appendChild(restartBtn);
+            
+            return endingDiv;
         }
 
         function makeChoice(nextSectionId) {
@@ -376,15 +413,31 @@
 
         function showEnding() {
             const content = document.getElementById('storyContent');
-            content.innerHTML = `
-                <div class="section active">
-                    <div class="ending">
-                        <h3>🎭 Ende der Geschichte</h3>
-                        <p style="margin-top: 10px;">Danke fürs Spielen!</p>
-                        <button class="restart-btn" onclick="restartStory()">Neue Geschichte starten</button>
-                    </div>
-                </div>
-            `;
+            content.innerHTML = '';
+            
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'section active';
+            
+            const endingDiv = document.createElement('div');
+            endingDiv.className = 'ending';
+            
+            const heading = document.createElement('h3');
+            heading.textContent = '🎭 Ende der Geschichte';
+            endingDiv.appendChild(heading);
+            
+            const thanksText = document.createElement('p');
+            thanksText.style.marginTop = '10px';
+            thanksText.textContent = 'Danke fürs Spielen!';
+            endingDiv.appendChild(thanksText);
+            
+            const restartBtn = document.createElement('button');
+            restartBtn.className = 'restart-btn';
+            restartBtn.textContent = 'Neue Geschichte starten';
+            restartBtn.addEventListener('click', restartStory);
+            endingDiv.appendChild(restartBtn);
+            
+            sectionDiv.appendChild(endingDiv);
+            content.appendChild(sectionDiv);
         }
 
         function restartStory() {

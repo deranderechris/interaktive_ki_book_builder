@@ -66,6 +66,7 @@ Erstelle eine neue JSON-Datei mit folgender Struktur:
 - `index.html` - Der interaktive Story-Builder/Viewer
 - `story-schema.json` - JSON-Schema zur Validierung
 - `example-story.json` - Beispielgeschichte "Das Magische Abenteuer"
+- `story-template.json` - Vorlage zum Erstellen eigener Geschichten
 
 ## 🎨 Bild-Prompts
 

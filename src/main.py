@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Interactive Book Builder - Main Entry Point
-Allows creating and running interactive gamebooks with images.
+Interaktiver Book Builder - Haupteinstiegspunkt
+Ermöglicht das Erstellen und Ausführen von interaktiven Gamebooks mit Bildern.
 """
 
 import argparse
@@ -11,43 +11,43 @@ from pathlib import Path
 
 
 def load_gamebook(filepath):
-    """Load a gamebook from a JSON file."""
+    """Lade ein Gamebook aus einer JSON-Datei."""
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"Error: File '{filepath}' not found.")
+        print(f"Fehler: Datei '{filepath}' nicht gefunden.")
         sys.exit(1)
     except json.JSONDecodeError as e:
-        print(f"Error: Invalid JSON in '{filepath}': {e}")
+        print(f"Fehler: Ungültiges JSON in '{filepath}': {e}")
         sys.exit(1)
 
 
 def display_scene(scene):
-    """Display a scene from the gamebook."""
+    """Zeige eine Szene aus dem Gamebook an."""
     print("\n" + "=" * 60)
-    print(f"\n{scene.get('title', 'Untitled Scene')}")
+    print(f"\n{scene.get('title', 'Unbenannte Szene')}")
     print("-" * 60)
     print(f"\n{scene.get('text', '')}\n")
     
     if 'image' in scene:
-        print(f"[Image: {scene['image']}]")
+        print(f"[Bild: {scene['image']}]")
     
     choices = scene.get('choices', [])
     if choices:
-        print("\nChoices:")
+        print("\nAuswahlmöglichkeiten:")
         for i, choice in enumerate(choices, 1):
-            print(f"  {i}. {choice.get('text', 'Continue')}")
+            print(f"  {i}. {choice.get('text', 'Weiter')}")
     else:
-        print("\n[End of story]")
+        print("\n[Ende der Geschichte]")
     
     print("=" * 60)
 
 
 def run_gamebook(gamebook_data):
-    """Run an interactive gamebook."""
+    """Führe ein interaktives Gamebook aus."""
     print("\n" + "=" * 60)
-    print(f"  {gamebook_data.get('title', 'Interactive Gamebook')}")
+    print(f"  {gamebook_data.get('title', 'Interaktives Gamebook')}")
     print("=" * 60)
     
     if 'description' in gamebook_data:
@@ -55,13 +55,13 @@ def run_gamebook(gamebook_data):
     
     scenes = gamebook_data.get('scenes', [])
     if not scenes:
-        print("Error: No scenes found in gamebook.")
+        print("Fehler: Keine Szenen im Gamebook gefunden.")
         return
     
     current_scene_id = gamebook_data.get('start_scene', scenes[0].get('id', 0))
     
     while True:
-        # Find current scene
+        # Finde aktuelle Szene
         current_scene = None
         for scene in scenes:
             if scene.get('id') == current_scene_id:
@@ -69,25 +69,25 @@ def run_gamebook(gamebook_data):
                 break
         
         if not current_scene:
-            print(f"\nError: Scene '{current_scene_id}' not found.")
+            print(f"\nFehler: Szene '{current_scene_id}' nicht gefunden.")
             break
         
-        # Display the scene
+        # Zeige die Szene an
         display_scene(current_scene)
         
-        # Get choices
+        # Hole Auswahlmöglichkeiten
         choices = current_scene.get('choices', [])
         if not choices:
-            # End of story
+            # Ende der Geschichte
             break
         
-        # Get user input
+        # Hole Benutzereingabe
         while True:
             try:
-                choice_input = input("\nEnter your choice (number or 'q' to quit): ").strip()
+                choice_input = input("\nGib deine Wahl ein (Zahl oder 'q' zum Beenden): ").strip()
                 
                 if choice_input.lower() == 'q':
-                    print("\nThanks for playing!")
+                    print("\nDanke fürs Spielen!")
                     return
                 
                 choice_num = int(choice_input)
@@ -95,41 +95,41 @@ def run_gamebook(gamebook_data):
                     selected_choice = choices[choice_num - 1]
                     current_scene_id = selected_choice.get('next_scene')
                     if current_scene_id is None:
-                        print("\nEnd of story. Thanks for playing!")
+                        print("\nEnde der Geschichte. Danke fürs Spielen!")
                         return
                     break
                 else:
-                    print(f"Please enter a number between 1 and {len(choices)}.")
+                    print(f"Bitte gib eine Zahl zwischen 1 und {len(choices)} ein.")
             except ValueError:
-                print("Please enter a valid number or 'q' to quit.")
+                print("Bitte gib eine gültige Zahl oder 'q' zum Beenden ein.")
             except (KeyboardInterrupt, EOFError):
-                print("\n\nThanks for playing!")
+                print("\n\nDanke fürs Spielen!")
                 return
 
 
 def main():
-    """Main entry point for the application."""
+    """Haupteinstiegspunkt für die Anwendung."""
     parser = argparse.ArgumentParser(
-        description='Interactive Book Builder - Create and play interactive gamebooks'
+        description='Interaktiver Book Builder - Erstelle und spiele interaktive Gamebooks'
     )
     parser.add_argument(
         '--example',
         type=str,
-        help='Path to an example gamebook JSON file to load and play'
+        help='Pfad zu einer Beispiel-Gamebook-JSON-Datei zum Laden und Spielen'
     )
     
     args = parser.parse_args()
     
     if args.example:
-        # Load and run the example gamebook
+        # Lade und führe das Beispiel-Gamebook aus
         example_path = Path(args.example)
-        print(f"Loading example from: {example_path}")
+        print(f"Lade Beispiel von: {example_path}")
         gamebook_data = load_gamebook(example_path)
         run_gamebook(gamebook_data)
     else:
-        # No arguments provided, show help
+        # Keine Argumente angegeben, zeige Hilfe
         parser.print_help()
-        print("\nExample usage:")
+        print("\nBeispielverwendung:")
         print("  python src/main.py --example examples/mini_gamebook.json")
 
 

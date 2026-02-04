@@ -146,6 +146,12 @@ class StoryExporter:
         const storyData = {story_json};
         let currentSectionId = storyData.start_section_id;
         
+        function escapeHtml(text) {{
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }}
+        
         function displaySection(sectionId) {{
             const section = storyData.sections[sectionId];
             if (!section) {{
@@ -154,17 +160,17 @@ class StoryExporter:
             }}
             
             let html = '<div class="section">';
-            html += '<h2 class="section-title">' + section.title + '</h2>';
-            html += '<div class="section-content">' + section.content.replace(/\\n/g, '<br>') + '</div>';
+            html += '<h2 class="section-title">' + escapeHtml(section.title) + '</h2>';
+            html += '<div class="section-content">' + escapeHtml(section.content).replace(/\\n/g, '<br>') + '</div>';
             
             if (section.image_prompt) {{
-                html += '<div class="image-prompt">🎨 Bild-Prompt: ' + section.image_prompt + '</div>';
+                html += '<div class="image-prompt">🎨 Bild-Prompt: ' + escapeHtml(section.image_prompt) + '</div>';
             }}
             
             if (section.hints && section.hints.length > 0) {{
                 html += '<div class="hints"><strong>💡 Hinweise:</strong><ul>';
                 section.hints.forEach(hint => {{
-                    html += '<li>' + hint + '</li>';
+                    html += '<li>' + escapeHtml(hint) + '</li>';
                 }});
                 html += '</ul></div>';
             }}
@@ -172,9 +178,9 @@ class StoryExporter:
             if (section.choices && section.choices.length > 0) {{
                 html += '<div class="choices">';
                 section.choices.forEach(choice => {{
-                    const label = choice.label ? '<span class="choice-label">' + choice.label + ')</span>' : '';
-                    html += '<button class="choice" onclick="makeChoice(\'' + choice.next_section_id + '\')">';
-                    html += label + choice.text;
+                    const label = choice.label ? '<span class="choice-label">' + escapeHtml(choice.label) + ')</span>' : '';
+                    html += '<button class="choice" onclick="makeChoice(&apos;' + choice.next_section_id + '&apos;)">';
+                    html += label + escapeHtml(choice.text);
                     html += '</button>';
                 }});
                 html += '</div>';

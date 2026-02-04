@@ -114,6 +114,12 @@
         const storyData = {"title": "Der Zauberwald", "description": "Ein magisches Abenteuer für junge Entdecker", "author": "KI Book Builder", "start_section_id": "S1", "sections": {"S1": {"section_id": "S1", "title": "Am Waldrand", "content": "Du stehst am Rand eines geheimnisvollen Waldes. Die Bäume ragen hoch in den Himmel, und zwischen den Ästen funkeln magische Lichter. Ein schmaler Pfad führt tief in den Wald hinein, während rechts ein kristallklarer Bach plätschert.", "choices": [{"text": "Dem Pfad in den Wald folgen", "next_section_id": "S2", "label": "A"}, {"text": "Dem Bach folgen", "next_section_id": "S3", "label": "B"}], "image_prompt": "children's book illustration style, colorful, friendly, whimsical, waldrand, stehst, rand, eines, geheimnisvollen", "hints": [], "story_memory": {}}, "S2": {"section_id": "S2", "title": "Im tiefen Wald", "content": "Der Pfad führt dich tiefer in den Wald. Plötzlich siehst du eine kleine Fee, die auf einem Pilz sitzt. Sie winkt dir fröhlich zu.", "choices": [{"text": "Mit der Fee sprechen", "next_section_id": "S4", "label": "A"}, {"text": "Weiter den Pfad entlang gehen", "next_section_id": "S5", "label": "B"}], "image_prompt": "children's book illustration style, colorful, friendly, whimsical, tiefen, wald, pfad, führt, dich", "hints": [], "story_memory": {}}, "S3": {"section_id": "S3", "title": "Der magische Bach", "content": "Du folgst dem Bach und entdeckst eine wunderschöne Lichtung. In der Mitte steht ein alter Baum mit einer Tür im Stamm.", "choices": [{"text": "Die Tür öffnen", "next_section_id": "S6", "label": "A"}, {"text": "Zurück zum Waldrand gehen", "next_section_id": "S1", "label": "B"}], "image_prompt": "children's book illustration style, colorful, friendly, whimsical, magische, bach, folgst, entdeckst, wunderschöne", "hints": [], "story_memory": {}}, "S4": {"section_id": "S4", "title": "Die Fee der Weisheit", "content": "Die Fee lächelt dich an und schenkt dir einen magischen Kristall. 'Dieser wird dir immer den richtigen Weg zeigen', sagt sie. Du hast einen wertvollen Schatz gefunden!", "choices": [], "image_prompt": "children's book illustration style, colorful, friendly, whimsical, weisheit, lächelt, dich, schenkt, magischen", "hints": [], "story_memory": {}}, "S5": {"section_id": "S5", "title": "Der endlose Pfad", "content": "Du gehst weiter und weiter, doch der Pfad scheint kein Ende zu nehmen. Schließlich findest du einen Weg zurück zum Waldrand. Das Abenteuer war interessant, aber du hast nichts Besonderes gefunden.", "choices": [], "image_prompt": "children's book illustration style, colorful, friendly, whimsical, endlose, pfad, gehst, weiter, doch", "hints": [], "story_memory": {}}, "S6": {"section_id": "S6", "title": "Der verborgene Palast", "content": "Die Tür öffnet sich und du betrittst einen prächtigen unterirdischen Palast! Die Waldgeister empfangen dich als ehrenvollen Gast. Du wirst zum Hüter des Zauberwaldes ernannt!", "choices": [], "image_prompt": "children's book illustration style, colorful, friendly, whimsical, verborgene, palast, öffnet, betrittst, prächtigen", "hints": [], "story_memory": {}}}, "metadata": {}};
         let currentSectionId = storyData.start_section_id;
         
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
         function displaySection(sectionId) {
             const section = storyData.sections[sectionId];
             if (!section) {
@@ -122,17 +128,17 @@
             }
             
             let html = '<div class="section">';
-            html += '<h2 class="section-title">' + section.title + '</h2>';
-            html += '<div class="section-content">' + section.content.replace(/\n/g, '<br>') + '</div>';
+            html += '<h2 class="section-title">' + escapeHtml(section.title) + '</h2>';
+            html += '<div class="section-content">' + escapeHtml(section.content).replace(/\n/g, '<br>') + '</div>';
             
             if (section.image_prompt) {
-                html += '<div class="image-prompt">🎨 Bild-Prompt: ' + section.image_prompt + '</div>';
+                html += '<div class="image-prompt">🎨 Bild-Prompt: ' + escapeHtml(section.image_prompt) + '</div>';
             }
             
             if (section.hints && section.hints.length > 0) {
                 html += '<div class="hints"><strong>💡 Hinweise:</strong><ul>';
                 section.hints.forEach(hint => {
-                    html += '<li>' + hint + '</li>';
+                    html += '<li>' + escapeHtml(hint) + '</li>';
                 });
                 html += '</ul></div>';
             }
@@ -140,9 +146,9 @@
             if (section.choices && section.choices.length > 0) {
                 html += '<div class="choices">';
                 section.choices.forEach(choice => {
-                    const label = choice.label ? '<span class="choice-label">' + choice.label + ')</span>' : '';
-                    html += '<button class="choice" onclick="makeChoice('' + choice.next_section_id + '')">';
-                    html += label + choice.text;
+                    const label = choice.label ? '<span class="choice-label">' + escapeHtml(choice.label) + ')</span>' : '';
+                    html += '<button class="choice" onclick="makeChoice(&apos;' + choice.next_section_id + '&apos;)">';
+                    html += label + escapeHtml(choice.text);
                     html += '</button>';
                 });
                 html += '</div>';

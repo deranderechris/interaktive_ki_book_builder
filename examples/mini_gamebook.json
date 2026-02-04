@@ -1,0 +1,105 @@
+{
+  "title": "Mini Gamebook - Das Abenteuer beginnt",
+  "description": "Ein kleines interaktives Abenteuer zum Testen des Book Builders",
+  "start_scene": "start",
+  "scenes": [
+    {
+      "id": "start",
+      "title": "Der mysteriöse Wald",
+      "text": "Du stehst am Rande eines dunklen Waldes. Der Weg vor dir gabelt sich in zwei Richtungen. Links hörst du das sanfte Plätschern eines Baches, rechts siehst du Rauch in der Ferne aufsteigen.",
+      "image": "forest_entrance.jpg",
+      "choices": [
+        {
+          "text": "Folge dem Geräusch des Baches nach links",
+          "next_scene": "brook"
+        },
+        {
+          "text": "Gehe in Richtung des Rauchs nach rechts",
+          "next_scene": "smoke"
+        }
+      ]
+    },
+    {
+      "id": "brook",
+      "title": "Am Bach",
+      "text": "Du folgst dem Pfad zum Bach. Das Wasser ist kristallklar und erfrischt dich. Plötzlich siehst du etwas Glänzendes am Ufer liegen.",
+      "image": "brook.jpg",
+      "choices": [
+        {
+          "text": "Untersuche das glänzende Objekt",
+          "next_scene": "treasure"
+        },
+        {
+          "text": "Ignoriere es und gehe weiter",
+          "next_scene": "continue_path"
+        }
+      ]
+    },
+    {
+      "id": "smoke",
+      "title": "Die Hütte",
+      "text": "Du näherst dich dem Rauch und entdeckst eine kleine Hütte. Eine freundlich aussehende alte Frau winkt dich herein.",
+      "image": "cottage.jpg",
+      "choices": [
+        {
+          "text": "Betrete die Hütte",
+          "next_scene": "inside_cottage"
+        },
+        {
+          "text": "Sei vorsichtig und gehe weiter",
+          "next_scene": "continue_path"
+        }
+      ]
+    },
+    {
+      "id": "treasure",
+      "title": "Der magische Anhänger",
+      "text": "Du hebst das glänzende Objekt auf - es ist ein wunderschöner goldener Anhänger! Er beginnt warm zu leuchten, als du ihn berührst. Du fühlst, wie neue Energie durch deinen Körper strömt.",
+      "image": "pendant.jpg",
+      "choices": [
+        {
+          "text": "Setze deine Reise mit dem Anhänger fort",
+          "next_scene": "good_ending"
+        }
+      ]
+    },
+    {
+      "id": "inside_cottage",
+      "title": "Weisheit der Alten",
+      "text": "Die alte Frau bietet dir Tee an und erzählt dir Geschichten aus alten Zeiten. Sie gibt dir einen weisen Rat für deine Reise und ein kleines Geschenk.",
+      "image": "wise_woman.jpg",
+      "choices": [
+        {
+          "text": "Bedanke dich und setze deine Reise fort",
+          "next_scene": "good_ending"
+        }
+      ]
+    },
+    {
+      "id": "continue_path",
+      "title": "Der lange Weg",
+      "text": "Du gehst weiter durch den Wald. Der Weg ist lang und beschwerlich, aber du gibst nicht auf. Nach vielen Stunden erreichst du eine Lichtung.",
+      "image": "clearing.jpg",
+      "choices": [
+        {
+          "text": "Raste auf der Lichtung",
+          "next_scene": "neutral_ending"
+        }
+      ]
+    },
+    {
+      "id": "good_ending",
+      "title": "Ein erfolgreicher Abschluss",
+      "text": "Mit deinem neuen Schatz oder der gewonnenen Weisheit kehrst du nach Hause zurück. Dein Abenteuer war ein voller Erfolg! Die Dorfbewohner feiern deine Rückkehr.",
+      "image": "victory.jpg",
+      "choices": []
+    },
+    {
+      "id": "neutral_ending",
+      "title": "Eine ruhige Rückkehr",
+      "text": "Nach einer erholsamen Rast auf der Lichtung findest du den Weg zurück ins Dorf. Es war ein interessantes Abenteuer, auch wenn du keine besonderen Schätze gefunden hast. Manchmal ist die Reise selbst der wahre Schatz.",
+      "image": "home.jpg",
+      "choices": []
+    }
+  ]
+}

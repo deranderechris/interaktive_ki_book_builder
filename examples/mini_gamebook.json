@@ -1,0 +1,61 @@
+{
+  "title": "Die verzauberte Bibliothek",
+  "description": "Ein kurzes interaktives Abenteuer in einer magischen Bibliothek",
+  "start": "entrance",
+  "nodes": {
+    "entrance": {
+      "text": "Du stehst vor einer alten, geheimnisvollen Bibliothek. Der Eingang ist mit leuchtenden Runen verziert. Als du näher kommst, öffnet sich die Tür von selbst.\n\nDu betrittst die Bibliothek und siehst zwei Gänge vor dir.",
+      "image": "library_entrance.jpg",
+      "choices": [
+        {
+          "text": "Gehe den linken Gang mit den goldenen Bücherregalen entlang",
+          "next": "golden_corridor"
+        },
+        {
+          "text": "Gehe den rechten Gang mit den dunklen, mysteriösen Regalen entlang",
+          "next": "dark_corridor"
+        }
+      ]
+    },
+    "golden_corridor": {
+      "text": "Der Gang mit den goldenen Regalen ist hell erleuchtet. Die Bücher scheinen zu schimmern. Du findest ein besonderes Buch mit einem Sonnen-Symbol auf dem Einband.",
+      "image": "golden_books.jpg",
+      "choices": [
+        {
+          "text": "Öffne das Buch mit dem Sonnen-Symbol",
+          "next": "sun_book"
+        },
+        {
+          "text": "Gehe zurück zum Eingang",
+          "next": "entrance"
+        }
+      ]
+    },
+    "dark_corridor": {
+      "text": "Der dunkle Gang ist kühl und geheimnisvoll. Zwischen den Regalen siehst du ein schwach leuchtendes Buch mit einem Mond-Symbol.",
+      "image": "dark_books.jpg",
+      "choices": [
+        {
+          "text": "Nimm das Buch mit dem Mond-Symbol",
+          "next": "moon_book"
+        },
+        {
+          "text": "Gehe zurück zum Eingang",
+          "next": "entrance"
+        }
+      ]
+    },
+    "sun_book": {
+      "text": "Als du das Buch öffnest, strömt warmes, goldenes Licht heraus. Du liest von alten Weisheiten und magischen Geschichten.\n\nDas Buch zeigt dir den Weg zu einem verborgenen Schatz der Weisheit. Du hast die Geheimnisse der Sonnenbibliothek entdeckt!",
+      "image": "sun_magic.jpg",
+      "end": true,
+      "ending_message": "Glückwunsch! Du hast das gute Ende erreicht - die Weisheit des Sonnenbuches!"
+    },
+    "moon_book": {
+      "text": "Das Mondbuch fühlt sich kühl an. Als du es öffnest, erscheinen silberne Buchstaben, die von Traumwelten und nächtlichen Geheimnissen erzählen.\n\nDu wirst in eine Traumwelt gezogen und erlebst fantastische Abenteuer. Die Bibliothek hat dich als würdigen Träumer erkannt!",
+      "image": "moon_magic.jpg",
+      "end": true,
+      "ending_message": "Glückwunsch! Du hast das mystische Ende erreicht - die Träume des Mondbuches!"
+    }
+  }
+}

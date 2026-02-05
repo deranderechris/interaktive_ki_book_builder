@@ -12,7 +12,9 @@ Der Interaktive Book Builder ist ein einfaches Python-Tool, mit dem Sie schnell 
 - 🖼️ Unterstützung für Bilder in jedem Kapitel
 - 💾 Export als JSON-Datei
 - 🌐 Export als HTML-Datei (schön formatiert und sofort im Browser ansehbar)
-- 📝 Vollständig in Python geschrieben (keine externen Abhängigkeiten)
+- 📝 Vollständig in Python geschrieben (GUI via Tkinter)
+- 🧰 GUI-Builder zum Erstellen von Buechern
+- 📦 Builds als EXE/Binary mit PyInstaller
 
 ## Installation
 
@@ -22,7 +24,13 @@ git clone https://github.com/deranderechris/interaktive_ki_book_builder.git
 cd interaktive_ki_book_builder
 ```
 
-2. Python 3.6 oder höher ist erforderlich (keine zusätzlichen Pakete notwendig)
+2. Python 3.6 oder höher ist erforderlich
+
+Optional fuer Builds:
+
+```bash
+pip install -r requirements.txt
+```
 
 ## Verwendung
 
@@ -35,6 +43,31 @@ python3 example.py
 ```
 
 Dies erstellt ein Beispielbuch mit mehreren Kapiteln und speichert es als `zeitreise_buch.json` und `zeitreise_buch.html`.
+
+### GUI-Builder starten
+
+```bash
+python3 gui_app.py
+```
+
+Damit koennen Sie Titel/Autor setzen, Kapitel hinzufuegen und JSON/HTML exportieren.
+
+### Android APK (Kivy/Buildozer)
+
+Die APK kann nur unter Linux gebaut werden (Buildozer). Android-Exports lassen sich ueber den Dateiauswahldialog speichern.
+
+```bash
+pip install -r requirements.txt
+buildozer init
+```
+
+Die Datei [buildozer.spec](buildozer.spec) ist bereits vorhanden. Danach:
+
+```bash
+buildozer -v android debug
+```
+
+Die APK liegt unter `bin/`.
 
 ### Eigenes Buch erstellen
 
@@ -102,6 +135,24 @@ Nach dem Ausführen wird eine HTML-Datei erstellt, die Sie direkt in Ihrem Brows
 ## Lizenz
 
 Dieses Projekt ist Open Source und frei verfügbar.
+
+## Build als EXE/Binary (PyInstaller)
+
+Hinweis: Windows-EXE kann nur unter Windows gebaut werden. Linux/macOS muessen jeweils auf dem Ziel-OS gebaut werden.
+
+### Windows (PowerShell)
+
+```powershell
+pyinstaller --onefile --name book_builder_gui gui_app.py
+```
+
+### Linux/macOS (bash)
+
+```bash
+pyinstaller --onefile --name book_builder_gui gui_app.py
+```
+
+Das Ergebnis liegt im Ordner `dist`.
 
 ## Beiträge
 

@@ -1,2 +1,6 @@
-# Keine externen Abhängigkeiten erforderlich
-# Das Tool verwendet nur Python Standard-Bibliotheken
+# Build tooling (GUI uses stdlib Tkinter).
+pyinstaller>=6.0
+
+# Android/Kivy (optional, for APK builds)
+kivy>=2.3
+buildozer>=1.5
